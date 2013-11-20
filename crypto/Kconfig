@@ -522,6 +522,15 @@ config CRYPTO_SHA1_ARM
 	  SHA-1 secure hash standard (FIPS 180-1/DFIPS 180-2) implemented
 	  using optimized ARM assembler.
 
+config CRYPTO_SHA1_ZYNQ
+	tristate "SHA1 digest algorithm (ZYNQ PL)"
+	depends on ARM
+	select CRYPTO_SHA1
+	select CRYPTO_HASH
+	help
+	  SHA-1 secure hash standard (Opencore) implemented using Zynq PL 
+	  (http://opencores.org/project,sha1,overview).
+
 config CRYPTO_SHA1_PPC
 	tristate "SHA1 digest algorithm (powerpc)"
 	depends on PPC
